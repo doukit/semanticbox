@@ -14,7 +14,7 @@ semanticbox.info(msg, callback);
 
 ```
 semanticbox.info("消息弹框!", function() {
-console.log("我是回调")
+    console.log("我是回调")
 });
 ```
 
