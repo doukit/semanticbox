@@ -62,7 +62,7 @@
 
     exports.debug = function () {
         console.log('only for debug');
-    }
+    };
 
     // 第一个参数为 options, 第二个参数为 callback
     function buildoptions (args) {
@@ -99,7 +99,7 @@
     }
 
     exports.info = function () {
-        var options = buildoptions(arguments)
+        var options = buildoptions(arguments);
         var info = options.content;
         var infoDialog = $(templates.info);
         infoDialog.find(".content p").html(info);
@@ -110,8 +110,8 @@
                 console.log("确定 被选中!");
             }
             processCallback(e, infoDialog, options.callback);
-        })
-    }
+        });
+    };
 
     exports.confirm = function () {
         var options = buildoptions(arguments);
@@ -130,21 +130,20 @@
                 console.log("确定 被选中!");
             }
             processCallback(e, confirmDialog, callback);
-        })
-
+        });
 
         confirmDialog.on("click", ".actions .cancel", function(e){
             if (debug) {
                 console.log("取消 被选中!");
             }
-            processCallback(e, confirmDialog, function(){})
+            processCallback(e, confirmDialog, function(){});
             callback.call(this, false);
-        })
-    }
+        });
+    };
 
     exports.init = function(_$) {
         return init(_$ || $);
     };
 
     return exports;
-}))
+}));
